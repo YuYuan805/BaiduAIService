@@ -23,14 +23,6 @@ public class FaceService {
 
         return result.toString();
     }
-    // 黑白上色
-    public String getBlackWhite(byte[] img) {
-        option.clear();
-        JSONObject result = GetBaiduAIPClient.getImageAip().
-                colourize(img, option);
-
-        return result.toString();
-    }
 
     public static FaceService getFaceService() {
         if (face_service == null) {

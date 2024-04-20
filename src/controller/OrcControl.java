@@ -35,13 +35,30 @@ public class OrcControl extends HttpServlet {
         String action = req.getParameter("action");
         // 返回数据到客户端
         PrintWriter writer = resp.getWriter();
+
         // 文字提取
         if (action.equals("text")) {
             writer.print(OcrService.getOcrService().getText(FileUtil.readReqAsByte(req)));
         }
+
         // 身份证识别
         if (action.equals("IDcard")) {
             writer.print(OcrService.getOcrService().getIDcard(FileUtil.readReqAsByte(req)));
+        }
+
+        // 银行卡识别
+        if (action.equals("bankcard")) {
+            writer.print(OcrService.getOcrService().getBankCard(FileUtil.readReqAsByte(req)));
+        }
+
+        // 车牌识别
+        if (action.equals("plateLicense")) {
+            writer.print(OcrService.getOcrService().getPlateLicense(FileUtil.readReqAsByte(req)));
+        }
+
+        // 车票识别
+        if (action.equals("trainTicket")) {
+            writer.print(OcrService.getOcrService().getTrainTicket(FileUtil.readReqAsByte(req)));
         }
 
         writer.flush();

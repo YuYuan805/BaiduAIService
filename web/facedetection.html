@@ -1,3 +1,5 @@
+<!-- 人脸情感识别 -->
+
 <!-- ctrl+/ 注释 -->
 <!-- ctrl+s 保存 -->
 <!-- ctrl+x 剪切 -->
@@ -27,14 +29,14 @@
 <!-- 网页的基本信息 -->
 <head>
     <!-- charset 设置编码格式 -->
-    <meta charset="utf-8" />
+    <meta charset="utf-8"/>
     <!-- title 网页名称 -->
     <title>百度AI-人脸检测</title>
 
     <!-- 1.创建外部css文件 -->
     <!-- 2.在head标签内部使用link导入外部样式 -->
     <!-- 3.href 可以通过url、相对、绝对地址访问 -->
-    <link rel="stylesheet" type="text/css" href="css/facedetection.css" />
+    <link rel="stylesheet" type="text/css" href="css/facedetection.css"/>
 
     <!-- Jquery脚本框架：轻量级，完美嵌入原生js -->
     <!-- 导包 -->
@@ -55,7 +57,7 @@
     <!-- 运行 ctrl+r -->
     <div class="input">
         <!-- 同步显示 -->
-        <img src="#" alt="" id="show_img" class="show_img" >
+        <img src="#" alt="" id="show_img" class="show_img">
 
         <a id="img_file" class="img_file">
             <!-- file上传 -->
@@ -63,7 +65,7 @@
             <form id="uploadForm" method="POST" enctype="multipart/form-data">
                 <!-- type="file" 文件提交输入：临时缓存 -->
                 <!-- name="file" 服务器获取的标示 -->
-                <input type="file" name="file" id="file" class="file" />
+                <input type="file" name="file" id="file" class="file"/>
             </form>
             本地上传图片
         </a>
@@ -73,22 +75,24 @@
     <div class="results">
         <p>识别结果</p>
         <div>
-            <span>人脸数量</span><p id="num">xxxxx</p>
+            <span>人脸数量：</span>
+            <p id="num">xxxxx</p>
         </div>
         <div>
-            <span>年龄</span><p id="age">xxxxx</p>
+            <span>年龄：</span>
+            <p id="age">xxxxx</p>
         </div>
         <div>
-            <span>颜值打分</span><p id="beauty">xxxxx</p>
+            <span>颜值打分：</span>
+            <p id="beauty">xxxxx</p>
         </div>
         <div>
-            <span>情绪</span><p id="mood">xxxxx</p>
+            <span>情绪：</span>
+            <p id="mood">xxxxx</p>
         </div>
         <div>
-            <span>性别</span><p id="sex">xxxxx</p>
-        </div>
-        <div>
-            <span>唯一标识</span><p id="token">xxxxx</p>
+            <span>性别：</span>
+            <p id="sex">xxxxx</p>
         </div>
     </div>
 

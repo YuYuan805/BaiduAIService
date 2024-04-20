@@ -139,6 +139,94 @@ html,body{
     background-size: 18%;
 }
 
+/* 2024年4月20日15点19分：wyy */
+.body{
+    /* 背景图片：1 图片路径 2 不重复 3 x 4 y */
+    background: url("../img/物体识别.png") no-repeat 50px center;
+    background-size: 18%;
+}
+
+.animal{
+    background: url("../img/动物识别.png") no-repeat 50px center;
+    background-size: 18%;
+}
+
+.blackwhite{
+    background: url("../img/画笔.png") no-repeat 50px center;
+    background-size: 18%;
+}
+
+.styleTrans{
+    background: url("../img/反转.png") no-repeat 50px center;
+    background-size: 18%;
+}
+
+.speech_recognition {
+    background: url("../img/语言识别.png") no-repeat 50px center;
+    background-size: 18%;
+}
+
+.ecnet_text{
+    background: url("../img/文本纠错.png") no-repeat 50px center;
+    background-size: 18%;
+}
+
+.ecnet_news{
+    background: url("../img/报纸,新闻,头条.png") no-repeat 50px center;
+    background-size: 18%;
+}
+
+.dish{
+    background: url("../img/菜品识别.png") no-repeat 50px center;
+    background-size: 18%;
+}
+
+.logo{
+    background: url("../img/可口可乐.png") no-repeat 50px center;
+    background-size: 18%;
+}
+
+.plant{
+    background: url("../img/植物.png") no-repeat 50px center;
+    background-size: 18%;
+}
+
+.landmark{
+    background: url("../img/地图-地标.png") no-repeat 50px center;
+    background-size: 18%;
+}
+
+.fruit{
+    background: url("../img/果蔬.png") no-repeat 50px center;
+    background-size: 18%;
+}
+
+.redwine{
+    background: url("../img/红酒.png") no-repeat 50px center;
+    background-size: 18%;
+}
+
+.currency{
+    background: url("../img/货币.png") no-repeat 50px center;
+    background-size: 18%;
+}
+
+.bankcard{
+    /* 背景图片：1 图片路径 2 不重复 3 x 4 y */
+    background: url("../img/银行卡.png") no-repeat 50px center;
+    background-size: 18%;
+}
+
+.plateLicense{
+    background: url("../img/车牌.png") no-repeat 50px center;
+    background-size: 18%;
+}
+
+.trainTicket{
+    background: url("../img/门票.png") no-repeat 50px center;
+    background-size: 18%;
+}
+
 .face_detect{
     /* 背景图片：1 图片路径 2 不重复 3 x 4 y */
     background: url("../img/人脸核身.png") no-repeat 50px center;

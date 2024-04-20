@@ -23,6 +23,21 @@ public class SpeechService {
     }
 
 
+    // 2024年4月20日19点12分 ： sb
+    // 语音识别
+    public String Getvoiceidentify(byte[] voive)//人脸检测
+    {
+        HashMap map = new HashMap<String,String>();
+
+        //String voiveb64 = Base64Util.encode(voive);
+        JSONObject jsonObject = GetBaiduAIPClient.getSpeechAip().asr(voive ,"wav", 16000, null);
+        System.out.println(jsonObject.toString());
+        return jsonObject.toString();
+    }
+
+
+
+
     public static SpeechService getFaceService() {
         if (speech_service == null) {
             speech_service = new SpeechService();

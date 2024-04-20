@@ -44,9 +44,12 @@ public class SpeechControl extends HttpServlet {
             writer.print(Base64Util.encode(SpeechService.getFaceService().getSynthesis(req.getParameter("text"),
                     req.getParameter("spd"), req.getParameter("pit"), req.getParameter("per"))));
         }
+
         //
-        if (action.equals("bw")) {
-            // writer.print(ImageService.getNlpService().getBlackWhite(FileUtil.readReqAsByte(req)));
+        if (action.equals("voice")) {
+            writer.print(SpeechService.getFaceService().Getvoiceidentify(FileUtil.readReqAsByte(req)));
         }
+        writer.flush();
+        writer.close();
     }
 }

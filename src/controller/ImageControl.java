@@ -36,7 +36,7 @@ public class ImageControl extends HttpServlet {
         String action = req.getParameter("action");
 
         PrintWriter writer = resp.getWriter();
-        // 图片转动漫
+        // 图片头像转动漫
         if (action.equals("anime")) {
             writer.print(ImageService.getNlpService().getSelfieAnime(FileUtil.readReqAsByte(req)));
         }
@@ -44,5 +44,62 @@ public class ImageControl extends HttpServlet {
         if (action.equals("bw")) {
             writer.print(ImageService.getNlpService().getBlackWhite(FileUtil.readReqAsByte(req)));
         }
+        // 图片风格转换
+        if (action.equals("styletrans")) {
+            writer.print(ImageService.getNlpService().getStyleTrans(FileUtil.readReqAsByte(req)));
+        }
+        // 2024年4月20日10点55分 ： wyy
+        // 通用物体识别
+        if (action.equals("objectdetect")) {
+            writer.print(ImageService.getNlpService().getObjectDetect(FileUtil.readReqAsByte(req)));
+        }
+        // 2024年4月20日15点42分 ： sb
+        // 动物识别
+        if (action.equals("animal")) {
+            writer.print(ImageService.getNlpService().getAnimalDetect(FileUtil.readReqAsByte(req)));
+        }
+        // 2024年4月20日16点29分：wyy
+        // 菜品识别
+        if (action.equals("dish")) {
+            writer.print(ImageService.getNlpService().getDishDetect(FileUtil.readReqAsByte(req)));
+        }
+        // 2024年4月20日18点31分：wyy
+        // logo商标识别
+        if (action.equals("logo")) {
+            writer.print(ImageService.getNlpService().getLogoSearch(FileUtil.readReqAsByte(req)));
+        }
+        // 2024年4月20日18点46分：wyy
+        // 植物识别
+        if (action.equals("plant")) {
+            writer.print(ImageService.getNlpService().getPlantDetect(FileUtil.readReqAsByte(req)));
+        }
+        // 2024年4月20日19点09分：wyy
+        // 地标识别
+        if (action.equals("landmark")) {
+            writer.print(ImageService.getNlpService().getLandmark(FileUtil.readReqAsByte(req)));
+        }
+        // 2024年4月20日19点10分：wyy
+        // 果蔬识别
+        if (action.equals("fruit")) {
+            writer.print(ImageService.getNlpService().getFruit(FileUtil.readReqAsByte(req)));
+        }
+        // 2024年4月20日19点12分：wyy
+        // 红酒识别
+        if (action.equals("redwine")) {
+            writer.print(ImageService.getNlpService().getRedwine(FileUtil.readReqAsByte(req)));
+        }
+        // 2024年4月20日19点13分：wyy
+        // 货币识别
+        if (action.equals("currency")) {
+            writer.print(ImageService.getNlpService().getVehicleDetect(FileUtil.readReqAsByte(req)));
+        }
+
+
+
+
+
+
+        writer.flush();
+        writer.close();
     }
 }

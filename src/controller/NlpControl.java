@@ -35,13 +35,28 @@ public class NlpControl extends HttpServlet {
         String action = req.getParameter("action");
 
         PrintWriter writer = resp.getWriter();
-        // 情感分析
+        // 语言情感处理分析
         if (action.equals("sentiment")) {
             writer.print(NlpService.getNlpService().getSentiment(req.getParameter("text")));
         }
-
+        // 地址识别
         if (action.equals("address")) {
             writer.print(NlpService.getNlpService().getAddress(req.getParameter("text")));
         }
+        // 修改日期：2024年4月20日10点50分
+        // 修改：lx
+        // 文本纠错
+        if (action.equals("ecnet")) {
+            writer.print(NlpService.getNlpService().getecnet(req.getParameter("text")));
+        }
+
+        //2024年4月20日16:00:41
+        // 文本纠错
+        if (action.equals("newsSummary")) {
+            writer.print(NlpService.getNlpService().getnewsSummary(req.getParameter("text")));
+        }
+
+        writer.flush();
+        writer.close();
     }
 }

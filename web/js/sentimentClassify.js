@@ -1,3 +1,6 @@
+// 语言情感分析
+// 2024年4月20日10点30分：功能异常
+// 2024年4月20日10点40分：功能正常
 
 // JQuery框架
 // 轻量化，简单易使用，替代原生JS
@@ -38,7 +41,7 @@ $(document).ready(function(){
         var $value = $("#text").val(); // 获取输入内容
         var config = {
             // 协议://本地IP:服务器端口/自定义URL?name=value&name=value
-            url:"nlpcontrol?action=sentiment&address="+$value,
+            url:"nlpcontrol?action=sentiment&text="+$value,
             method:"GET", // GET|POST|DELETE｜PUT｜OPTIONS
             dataType:"JSON", // 响应的数据类型：服务器返回数据类型 html\xml\file\json\text
             data:{}, // 提交数据 POST

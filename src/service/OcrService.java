@@ -29,6 +29,33 @@ public class OcrService {
 
         return result.toString();
     }
+    // 银行卡识别
+    public String getBankCard(byte[] img) {
+        option.clear();
+
+        JSONObject result = GetBaiduAIPClient.getOrcAip().
+                bankcard(img,  option);
+
+        return result.toString();
+    }
+    // 车牌识别
+    public String getPlateLicense(byte[] img) {
+        option.clear();
+        option.put("multi_detect", "true");
+        JSONObject result = GetBaiduAIPClient.getOrcAip().plateLicense(img,  option);
+
+        return result.toString();
+    }
+    // 车票识别
+    public String getTrainTicket(byte[] img) {
+        option.clear();
+
+        JSONObject result = GetBaiduAIPClient.getOrcAip().trainTicket(img, option);
+
+        return result.toString();
+    }
+
+
 
     public static OcrService getOcrService() {
         if (ocr_service == null) {

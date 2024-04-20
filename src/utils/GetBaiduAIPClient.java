@@ -42,6 +42,19 @@ public class GetBaiduAIPClient {
 
         return image_client;
     }
+    // 2024年4月20日11点00分
+    // 修改：wyy
+    // Image图像识别
+    public static AipImageClassify getImageClassifyAip() {
+        // 初始化一个AipImageClassify
+        image_client_s = new AipImageClassify(GetBaiduAIPClient.APPID,
+                GetBaiduAIPClient.APPKEY, GetBaiduAIPClient.APPSECRETKEY);
+
+        image_client_s.setConnectionTimeoutInMillis(2000); // 请求超时时间
+        image_client_s.setSocketTimeoutInMillis(60000);    // 读取超时时间
+
+        return image_client_s;
+    }
     // Speech语音合成识别
     public static AipSpeech getSpeechAip() {
         // 初始化一个AipSpeech
@@ -70,6 +83,7 @@ public class GetBaiduAIPClient {
     private static AipOcr ocr_client;
     private static AipNlp nlp_client;
     private static AipImageProcess image_client;
+    private static AipImageClassify image_client_s;
     private static AipSpeech speech_client;
     private static AipFace face_client;
 

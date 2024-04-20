@@ -1,3 +1,6 @@
+// 风格转换
+// 2024年4月20日10点12分：功能未完成
+// 2024年4月20日10点22分：功能完成，功能正常
 
 $(document).ready(function () {
 
@@ -22,7 +25,7 @@ $(document).ready(function () {
         // $formData.append(key,value);
 
         let config = {
-            url:"imagecontrol?action=styleTrans",
+            url:"imagecontrol?action=styletrans",
             method:"POST", // POST无内存限制，可以提交文件
             dataType:"JSON",
             data:$formData,

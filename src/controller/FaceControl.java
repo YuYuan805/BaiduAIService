@@ -36,13 +36,11 @@ public class FaceControl extends HttpServlet {
         String action = req.getParameter("action");
 
         PrintWriter writer = resp.getWriter();
-        // 图片转动漫
+        // 人脸信息识别
         if (action.equals("face")) {
             writer.print(FaceService.getFaceService().getFaceDetect(FileUtil.readReqAsByte(req)));
         }
-        // 黑白上色
-        if (action.equals("bw")) {
-            // writer.print(ImageService.getNlpService().getBlackWhite(FileUtil.readReqAsByte(req)));
-        }
+        writer.flush();
+        writer.close();
     }
 }

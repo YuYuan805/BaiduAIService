@@ -1,4 +1,6 @@
-
+// 身份证识别
+// 2024年4月20日10点43分：功能异常
+// 2024年4月20日10点44分：功能正常
 
 $(document).ready(function () {
 
@@ -23,7 +25,7 @@ $(document).ready(function () {
         // $formData.append(key,value);
 
         let config = {
-            url:"ocrcontrol?action=idcard",
+            url:"ocrcontrol?action=IDcard",
             method:"POST", // POST无内存限制，可以提交文件
             dataType:"JSON",
             data:$formData,
