@@ -34,8 +34,8 @@ $(document).ready(function () {
             success:function (resp) {
                 console.log(resp)
                 // 动态标签更新
-                $("#number").text(resp.words_result.number);
-                $("#color").text(resp.words_result.color);
+                $("#number").text(resp.words_result[0].number);
+                $("#color").text(resp.words_result[0].color);
 
             },
             error:function (resp) {

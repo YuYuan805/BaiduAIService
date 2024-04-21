@@ -76,7 +76,28 @@ public class GetBaiduAIPClient {
         face_client.setSocketTimeoutInMillis(60000);    // 读取超时时间
 
         return face_client;
+
     }
+
+
+    //人脸对比
+    public  static AipFace GetFaceContrastive()
+    {
+        //提交应用参数
+        Face_Contrastive  = new AipFace(APPID,APPKEY,APPSECRETKEY);
+        //设置超时时间
+        Face_Contrastive.setConnectionTimeoutInMillis(2000);
+        Face_Contrastive.setSocketTimeoutInMillis(60000);
+
+        return Face_Contrastive;
+    }
+
+
+
+
+
+
+
     // PIC
 
     // 静态成员变量
@@ -86,6 +107,7 @@ public class GetBaiduAIPClient {
     private static AipImageClassify image_client_s;
     private static AipSpeech speech_client;
     private static AipFace face_client;
+    private static AipFace Face_Contrastive;
 
     public static final String APPID = "60364114";
     public static final String APPKEY = "agkAQ4J1smsBfbTumjWvDsTJ";

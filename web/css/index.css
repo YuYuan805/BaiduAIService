@@ -48,6 +48,8 @@ html,body{
     align-items: center;
 }
 
+
+
 .head p {
     color: #fff;
     font-size: 40px;
@@ -74,6 +76,7 @@ html,body{
 .nav p{
     color: #777;
     font-size: 30px;
+    transition: color 0.3s ease; /* 平滑过渡效果 */
 }
 
 /* 激活标签的样式 */
@@ -117,6 +120,9 @@ html,body{
     /* 文字装饰：取消 */
     text-decoration: none;
     border: 1px solid #999;
+    /*border: 1px solid #dee2e6; !* 浅灰色边框 *!*/
+    border-radius: 20px; /* 圆角 */
+    transition: transform 0.3s ease; /* 平滑过渡效果 */
 }
 
 /* 通过选择所有div下方的第一个a标签，增加右外边距 */

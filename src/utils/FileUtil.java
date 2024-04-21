@@ -11,6 +11,7 @@ import org.apache.tomcat.util.http.fileupload.servlet.ServletRequestContext;
 import javax.servlet.http.HttpServletRequest;
 import java.io.*;
 import java.util.List;
+import java.util.ArrayList;
 
 // FileUtil 读取文件二进制的工具类
 public class FileUtil {
@@ -73,7 +74,56 @@ public class FileUtil {
         return os.toByteArray();
     }
 
+    public static ArrayList readReqAsListByte(HttpServletRequest req){
 
+        ArrayList<byte[]> list  = new ArrayList<>();
+        // 创建一个字节（32字节）的缓冲区
+        ByteArrayOutputStream os = new ByteArrayOutputStream();
+
+        // 异常捕捉
+        try {
+            // ServletFileUpload tomcat处理上传文件的高级API
+            // DiskFileItemFactory 创建上文文件缓存区及配置
+            DiskFileItemFactory diskFileItemFactory = new DiskFileItemFactory();
+            ServletFileUpload fileUpload = new ServletFileUpload(diskFileItemFactory);
+            // setHeaderEncoding 设置编码
+            fileUpload.setHeaderEncoding("utf-8");
+
+            // ServletRequestContext 获取当前请求的上下文对象
+            ServletRequestContext requestContext = new ServletRequestContext(req);
+            // parseRequest 解析请求对象,返回文件的List列表
+            List<FileItem> fileItems = fileUpload.parseRequest(requestContext);
+
+            // 迭代器
+            for(FileItem file:fileItems){
+
+                // file 存在两种类型 1 普通表单文件（文本） 2 file表单文件
+                // isFormField 判断是否是普通表单类型 true 是 false 不是
+                if (!file.isFormField()){
+                    // 文件输入流
+                    InputStream is = file.getInputStream();
+
+                    byte[] buffer = new byte[1024]; // 缓冲区
+                    int len = 0; // 记录读取的长度
+                    // IO流的读写
+                    while ((len=is.read(buffer)) > 0){
+                        os.write(buffer,0,len);
+                    }
+
+                    os.close();
+                    is.close();
+                    list.add(os.toByteArray());
+                }
+            }
+
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+
+        // 返回字节数组
+        // toByteArray() 转换
+        return list;
+    }
     /**
      * 读取文件内容，作为字符串返回
      */
